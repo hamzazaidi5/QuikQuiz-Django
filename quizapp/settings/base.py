@@ -75,7 +75,7 @@ TEMPLATES = [
 ]
 
 AUTHENTICATION_BACKENDS = [
-    'django.contrib.auth.backends.ModelBackend',
+    # 'django.contrib.auth.backends.ModelBackend',
     'allauth.account.auth_backends.AuthenticationBackend',
 ]
 
@@ -90,11 +90,13 @@ DATABASES = {
         "ENGINE": "django.db.backends.postgresql_psycopg2",
         "NAME": env('DATABASE_NAME'),
         "USER": env("DATABASE_USER"),
-        "PASSWORD": env("DATABASE_PASS"),
+        "PASSWORD": "postgres",
         "HOST": "localhost",
         "PORT": "5432",
     }
 }
+
+print("database", DATABASES)
 
 
 # Password validation
